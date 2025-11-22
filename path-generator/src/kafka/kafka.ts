@@ -1,15 +1,8 @@
 import { Kafka } from "kafkajs";
 
 const kafka = new Kafka({
-  clientId: "collector-service",
-  brokers: ["kafka:9092"],
-  retry: {
-    initialRetryTime: 300,
-    retries: 10,
-    maxRetryTime: 30000,
-    multiplier: 2,
-    factor: 0.2,
-  },
+  clientId: "my-app",
+  brokers: ["kafka1:9092", "kafka2:9092"],
 });
 
 export default kafka;
