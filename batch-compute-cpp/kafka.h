@@ -104,7 +104,6 @@ public:
                 const_cast<char*>(message.c_str()),      // Message data
                 message.size(),                          // Message size
                 nullptr, 0,                              // No key
-                0,                                       // Timestamp (0 = now)
                 nullptr                                  // No per-message opaque pointer
             );
         } else {
@@ -117,7 +116,6 @@ public:
                 message.size(),
                 const_cast<char*>(key.c_str()),          // Message key
                 key.size(),                              // Key size
-                0,
                 nullptr
             );
         }
