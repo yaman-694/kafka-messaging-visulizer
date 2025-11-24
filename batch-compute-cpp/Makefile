@@ -1,4 +1,13 @@
-ALL: producer consumer
+ALL: path-finder
 
-CFLAGS=-Wall $(shell pkg-config --cflags glib-2.0 rdkafka)
-LDLIBS=$(shell pkg-config --libs glib-2.0 rdkafka)
+CXX=g++
+CXXFLAGS=-Wall -std=c++17
+LIBS=-lcurl -ljsoncpp
+
+path-finder: path-finder.cpp
+	$(CXX) $(CXXFLAGS) -o path-finder path-finder.cpp $(LIBS)
+
+clean:
+	rm -f path-finder
+
+.PHONY: ALL clean
