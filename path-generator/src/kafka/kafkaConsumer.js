@@ -24,10 +24,10 @@ async function subscribeToTopic(consumer) {
   while (!subscribed && retries < maxRetries) {
     try {
       await consumer.subscribe({
-        topic: "results_topic",
+        topic: "path-coordinates",
         fromBeginning: false,
       });
-      logger.log("Subscribed to topic: results_topic");
+      logger.log("Subscribed to topic: path-coordinates");
       subscribed = true;
     } catch (error) {
       retries++;
